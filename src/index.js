@@ -2,16 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 
-setInterval(()=>{
-    const element=(
-        <h1 className="heading">
-            <span className="text">Hello {new Date().toLocaleTimeString()} </span>      
-        </h1>
-    
+class Clock extends React.Component{
+    render() {
+        return(
+        
+    <h1 className="heading">
+        <span className="text">Hello {new Date().toLocaleTimeString()} </span>      
+    </h1>
     );
+        
     
+    }
+}    
 
-    ReactDOM.render(element,document.getElementById('root'));
-},1000);
+ReactDOM.render(<Clock locale='bn-BD'></Clock>, document.getElementById('root'));
+
 
 
