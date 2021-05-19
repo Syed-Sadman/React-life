@@ -1,6 +1,9 @@
+import Clock from './component/Clock';
+
+
 function App() {
   return (
-    <div>hello world</div>
+    <div><Clock locale='bn-BD'></Clock></div>
   );
 }
 
