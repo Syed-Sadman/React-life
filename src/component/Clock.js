@@ -37,21 +37,22 @@ class Clock extends React.Component{
     }
 
 
-    handleEvent=()=>{
+    handleEvent(){
         this.setState({
             locale:'en-US'
-        })
+        });
+        
     }
 
 
     render() {
-        const {date}=this.state;
+        const {date,locale}=this.state;         // when i destructure i don't need to write this.state.locale or this.state.date
         return(
         <div>
             <h1 className="heading">
-               <span className="text">Hello {date.toLocaleTimeString(this.state.locale)} </span>      
+               <span className="text">Hello {date.toLocaleTimeString(locale)} </span>      
             </h1>
-            <button onClick={this.handleEvent}>Click here</button>
+            <button onClick={this.handleEvent.bind(this)}>Click here</button>
         </div>
         
     );
