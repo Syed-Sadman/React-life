@@ -1,9 +1,14 @@
-import Clock from './component/Clock';
+//yimport Clock from './component/Clock';
+import FormHand from './component/FormHand';
 
 
 function App() {
   return (
-    <div><Clock ></Clock></div>
+
+    <div>
+    <FormHand/>
+      
+    </div>
   );
 }
 

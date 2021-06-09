@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from './Button';
 
 
 
@@ -37,22 +38,38 @@ class Clock extends React.Component{
     }
 
 
-    handleEvent(){
+    handleEvent=(locale)=>{
         this.setState({
-            locale:'en-US'
+            locale
         });
         
     }
 
 
     render() {
+        // console.log("clock comp rendered");
         const {date,locale}=this.state;         // when i destructure i don't need to write this.state.locale or this.state.date
+       
+        let butn;
+        if(locale==='bn-BD'){
+            butn=(<Button change={this.handleEvent} locale="en-US">CLick Here</Button>)
+        }
+        else{
+            (<Button change={this.handleEvent} locale="bn-BD">CLick Here</Button>)
+        }
+       
+       
+       
         return(
         <div>
             <h1 className="heading">
                <span className="text">Hello {date.toLocaleTimeString(locale)} </span>      
             </h1>
-            <button onClick={this.handleEvent.bind(this)}>Click here</button>
+            {butn}
+            {/* {locale ==='bn-BD'? (<Button change={this.handleEvent} locale="en-US">CLick Here</Button>)
+            :(<Button change={this.handleEvent} locale="bn-BD">CLick Here</Button>)
+} */}
+            {/* <Button change={this.handleEvent} locale="en-US">CLick Here</Button> */}
         </div>
         
     );
@@ -62,3 +79,16 @@ class Clock extends React.Component{
 }  
 
 export default Clock;
+
+
+
+
+
+
+
+
+
+
+
+
+
