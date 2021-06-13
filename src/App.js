@@ -1,17 +1,13 @@
-//yimport Clock from './component/Clock';
-// import FormHand from './component/FormHand';
-
-import Calculator from "./component/Calculator";
-
-//import BoilingVerdict from "./component/BoilingVerdict";
-
+// import Emoji from "./component/Composition/Emoji";
+// import Text from "./component/Composition/Text";
+import ClickCounter from "./component/HOC/ClickCounter";
 
 function App() {
   return (
 
     <div>
-    <Calculator/>
-      {/* <BoilingVerdict/> */}
+      <ClickCounter/>
+      
     </div>
   );
 }
